@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html ng-app="carApp">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<link rel="stylesheet" href="">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script type="text/javascript" src="car.js"></script>
+</head>
+<body ng-controller="carController" >
+
+	<header>
+		<div class="container">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							<a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Features</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Pricing</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Car Management
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								<a class="dropdown-item" href="Car.html">Show List Of All Cars</a>
+								<a class="dropdown-item" href="buyinsurance.html">Buy Insurance For Car</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Insurance Management
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								<a class="dropdown-item" href="Insurance.html">Show List Of Insurance</a>
+								
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</header><!-- /header -->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-4">
+				<h2>Add/Edit new car</h2>
+				<a href="" title="" ng-click="carNewFunction()">Add a new car</a>
+				<br/>
+				<a href="" title="" ng-click="carMeFunction()">Add a medium car</a>
+				
+				<br/>
+				<a href="" title="" ng-click="carOldFunction()">Add a old car</a>
+		
+				<div style="display:{{displayInfor}}">
+
+					<table>
+						<tr>
+							<td>Car Name: </td>
+							<td ><input type="text" name="" ng-model="carName" id="carName"></td>
+						</tr>
+
+						<tr >
+							<td>Plate Number: </td>
+							<td><input type="text" name="" ng-model="plateNumber"></td>
+						</tr>
+
+						<tr >
+							<td>Year of manufacture: </td>
+							<td><input type="text" name="" ng-model="yearOfM"></td>
+						</tr>
+
+						<tr >
+							<td>Brand:</td>
+							<td><input type="text"  ng-model="brand"></td>
+						</tr>
+                       
+                       	<tr>
+							<td>Have positioning device:</td>
+							<td><input type="text"  id="newCarInfor" ng-model="position" ></td>
+						</tr>
+                  
+
+                       <tr>
+							<td>Have power steering:</td>
+							<td><input type="text"  id="mediumCarInfor" ng-model="steering" ></td>
+						</tr>
+
+						
+							<tr>
+							<td>Action Duration (Nam Su dung):</td>
+							<td><input type="text"  id="oldCarInfor" ng-model="duration" ></td>
+						</tr>
+					
+					</table>
+
+					
+					<button style="margin-top: 10px;margin-left: 270px; width:80px; height: 40px" ng-click="insertCar(carName,plateNumber,yearOfM,brand,position,steering,duration)" id="btnAddCar">Add</button>
+					<button style="margin-top: 10px;margin-left: 270px; width:80px; height: 40px" ng-click="editCar(carName,plateNumber,yearOfM,brand,position,steering,duration)" id="btnEditCar">Edit</button>
+					<br/>
+
+				</div>
+
+				
+			</div>
+
+			<div class="col-xl-8">
+				<div >
+		<h2>List of all cars</h2>
+		<table border="1">
+
+			<thead>
+				<tr>
+					<th>Car Name</th>
+					<th>Plate Number</th>
+					<th>Year of manufacture</th>
+					<th>Brand</th>
+					<th>Having insurance</th>
+					<th>Other feature</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="car in listCars">
+					<td>{{car.name}}</td>
+					<td>{{car.numberPlate}}</td>
+					<td>{{car.yearOfManufacture}}</td>
+					<td>{{car.brand}}</td>
+					<td>{{car.haveInsurance}}</td>
+					<td>{{car.otherFeature}}</td>
+					<td><button type="" ng-click="chooseCar(car)">Edit</button>
+					<button type="" ng-click="deleteCar(car)">Del</button></td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+			</div>
+		</div>
+
+	</div>
+
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+	<button ng-click="insertCar1()">ADDDDDD</button>
+</body>
+</html>
