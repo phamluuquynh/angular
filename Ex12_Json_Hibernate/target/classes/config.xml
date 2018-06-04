@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+		<property name="hibernate.connection.username">c##ex7_car</property>
+		<property name="hibernate.connection.password">1234</property>
+		<property name="hibernate.show_sql">false</property>
+		<property name="current_session_context_class">thread</property>
+
+		<mapping class="com.plq.model.Car" />
+		<mapping class="com.plq.model.Insurance" />
+		<mapping class="com.plq.model.Insurance_Car" />
+	</session-factory>
+</hibernate-configuration>

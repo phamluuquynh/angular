@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: Ex12_Json_Hibernate
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Administrator
+Implementation-Vendor-Id: Ex12_Json_Hibernate
+Build-Jdk: 1.8.0_161
+Implementation-URL: http://projects.spring.io/spring-boot/Ex12_Json_Hi
+ bernate/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
