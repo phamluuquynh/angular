@@ -1,0 +1,16 @@
+com\service\impl\RecordCandidateServiceImpl.class
+com\controller\RecordCandidateController.class
+com\dao\impl\RecordCandidateDaoImpl.class
+com\entity\Jobs.class
+com\entity\RecordCandidate.class
+com\dao\UserDao.class
+com\config\WebAppInitialize.class
+com\entity\Authorities.class
+com\app\App.class
+com\config\MVCConfiguration.class
+com\dao\RecordCandidateDao.class
+com\config\AppConfig.class
+com\entity\User.class
+com\entity\News.class
+com\entity\UserProfile.class
+com\service\RecordCandidateService.class
